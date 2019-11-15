@@ -65,5 +65,5 @@ class stringCalculator{
 
 
 let calc = new stringCalculator();
-console.log(calc.Add(''))
+console.log(calc.Add('//[*][%]\n1*2%3'))
  module.exports = {stringCalculator}
