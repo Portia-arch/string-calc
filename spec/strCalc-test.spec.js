@@ -1,5 +1,6 @@
 const {stringCalculator} = require('../src/strCalculator');
 
+const validate = new stringCalculator
 
 //test if the string is empty//
 describe ("verify the string", function() {
@@ -16,11 +17,11 @@ describe ("verify the string", function() {
         expect(validate.Add("1,2")). toEqual(3);
     });
 
-    it("Should add unknown amount of numbers", function() {
-        expect(validate.Add("1,2,3")).toEqual(6);
-    });
-
-    it("should allow newline between numbers", function() {
+    it("Should allow newline between numbers", function() {
         expect(validate.Add("1 \n2")).toEqual(3);
     });
+
+    // it("", function() {
+    //     expect(validate.Add("")).toEqual();
+    // });
 });
