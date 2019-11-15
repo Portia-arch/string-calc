@@ -1,7 +1,17 @@
 class stringCalculator{
     constructor() {
-        this.regex1 = /\d{1,}/g;
+        this.regex1 = /\d{1,}/gm;
+        this.negatives = (numbers) => {
+            
+                let str = '';
+                // let numbers = str.split(/\d/);
 
+                for (let i = 0; i > numbers.length; i++)
+                    if (numbers[i] === '-' && !isNaN(numbers[i + 1])) {
+                        str += '-' + numbers[i + 1] + '-'
+                    }
+                return str;
+        }
     }
 
     Add(string) {
@@ -15,21 +25,21 @@ class stringCalculator{
         }
         
         //Throw an error if there's a negative
+        let negative = this.negatives(numbers);
         try {
-            if (string.includes("-")) {
-                for (let i = 0; i < number.length; i++) {
-                    msg = number.length;
-                    console.log(number[i]);
-                }
-                throw ("negatives not allowed")
+            if (string.includes('-')) 
+                // for (let i = 0; i < number.length; i++) {
+                //     msg = number.length;
+                //     console.log(number[i]);
 
-            }
-        } catch (e) { return "error " + e; }
+                throw ("Negatives " + negative + " not allowed")
+            } catch (e) { return e; }
 
         //Convert string to numbers
         for (let i = 0; i < numbers.length; i++) {
             let digit = parseInt(numbers[i])
                 if (digit > 1000) {
+                    continue
                 }
                 if (digit) {
                     results += digit;
@@ -40,16 +50,7 @@ class stringCalculator{
 
     }
     
-        negatives(string){
-        let str = ""
-        let numbers = string.split(/\d/);
-
-        for (let i=0; i > numbers.length; i++)
-            if(string[i] == "-" && !isNaN (string[i + 1])) {
-                str += numbers[i + 1]
-            }
-            return str;
-        }
+        
         
 }
 // function Add(string) {
@@ -64,5 +65,5 @@ class stringCalculator{
 
 
 let calc = new stringCalculator();
- console.log(calc.Add('//[**][%%][\n1**2%%3]'))
+console.log(calc.Add(''))
  module.exports = {stringCalculator}

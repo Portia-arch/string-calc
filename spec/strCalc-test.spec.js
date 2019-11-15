@@ -1,6 +1,6 @@
 const {stringCalculator} = require('../src/strCalculator');
 
-const validate = new stringCalculator
+const validate = new stringCalculator();
 
 //test if the string is empty//
 describe ("verify the string", function() {
@@ -21,7 +21,7 @@ describe ("verify the string", function() {
         expect(validate.Add("1 \n2")).toEqual(3);
     });
 
-    // it("", function() {
-    //     expect(validate.Add("")).toEqual();
-    // });
+    it("shoould no be greater than 1000", function() {
+        expect(validate.Add("2+1001")).toEqual(2);
+    });
 });
