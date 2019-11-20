@@ -4,7 +4,6 @@ class stringCalculator{
         this.negatives = (numbers) => {
             
                 let str = '';
-                // let numbers = str.split(/\d/);
 
                 for (let i = 0; i > numbers.length; i++)
                     if (numbers[i] === '-' && !isNaN(numbers[i + 1])) {
@@ -28,12 +27,11 @@ class stringCalculator{
         let negative = this.negatives(numbers);
         try {
             if (string.includes('-')) 
-                // for (let i = 0; i < number.length; i++) {
-                //     msg = number.length;
-                //     console.log(number[i]);
 
                 throw ("Negatives " + negative + " not allowed")
-            } catch (e) { return e; }
+            } 
+            catch (e) { 
+                return e; }
 
         //Convert string to numbers
         for (let i = 0; i < numbers.length; i++) {
@@ -46,24 +44,11 @@ class stringCalculator{
                 }
         }
         return results
-
-
-    }
-    
         
+    }   
         
 }
-// function Add(string) {
-//      if (string = "")
-//      return 0;
-
-//      return string
-//  }
-
-
-
-
 
 let calc = new stringCalculator();
-console.log(calc.Add('//[*][%]\n1*2%3'))
+console.log(calc.Add('2 + 1001'))
  module.exports = {stringCalculator}
