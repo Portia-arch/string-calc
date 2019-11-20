@@ -26,7 +26,7 @@ describe ("verify the string", function() {
 
     //should return an error if there are negatives
     it("should return error message and negative number", () => {
-        expect(validate.Add("//1\n- 2;1001,%%9")).toBe('-2')
+        expect(validate.Add("//1\n- 2;1001,%%9")).toBe('Negatives  not allowed')
     });
 
     //the numbers should not be greater than 100
