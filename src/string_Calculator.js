@@ -25,14 +25,10 @@ class stringCalculator{
         
         //Throw an error if there's a negative
         let negative = this.negatives(numbers);
-        try {
-            if (string.includes('-')) 
-
-                throw ("Negatives " + negative + " not allowed")
-            } 
-            catch (e) { 
-                return e; }
-
+        
+        if (negative) {
+            throw new Error('Negatives '+ negative +' not allowed');
+        }
         //Convert string to numbers
         for (let i = 0; i < numbers.length; i++) {
             let digit = parseInt(numbers[i])
@@ -50,5 +46,5 @@ class stringCalculator{
 }
 
 let calc = new stringCalculator();
-console.log(calc.Add('2 + 1001'))
+console.log(calc.Add('-2, 1001'))
  module.exports = {stringCalculator}
