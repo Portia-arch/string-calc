@@ -1,16 +1,7 @@
 class stringCalculator{
     constructor() {
         this.regex1 = /\d{1,}/gm;
-        // this.negatives = (numbers) => {
-            
-        //         let str = '';
-
-        //         for (let i = 0; i > numbers.length; i++)
-        //             if (numbers[i] === '-' && !isNaN(numbers[i + 1])) {
-        //                 str += '-' + numbers[i + 1]
-        //             }
-        //         return str;
-        // }
+       
     }
 
     Add(string) {
