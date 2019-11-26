@@ -25,10 +25,6 @@ describe ("verify the string", function() {
     });
 
     //should return an error if there are negatives
-    // it("should return error message and negative number", () => {
-    //     expect(() => { validate.Add('-2, 1') }).toThrowError('Negatives -2 not allowed')
-    // });
-
     it("returns an error message and a negative number(s)", () => {
         expect(() => {
             validate.Add("/-1\n-2%")
@@ -39,4 +35,5 @@ describe ("verify the string", function() {
     it("should no be greater than 1000", function() {
         expect(validate.Add("2+1001")).toEqual(2);
     });
+    
 });
