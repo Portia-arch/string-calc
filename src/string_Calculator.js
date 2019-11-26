@@ -44,6 +44,5 @@ class stringCalculator{
         
 }
 
-// let calc = new stringCalculator();
-// console.log(calc.Add("/-1\n-2%"))
+
  module.exports = {stringCalculator}
