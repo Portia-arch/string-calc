@@ -1,16 +1,16 @@
 class stringCalculator{
     constructor() {
         this.regex1 = /\d{1,}/gm;
-        this.negatives = (numbers) => {
+        // this.negatives = (numbers) => {
             
-                let str = '';
+        //         let str = '';
 
-                for (let i = 0; i > numbers.length; i++)
-                    if (numbers[i] === '-' && !isNaN(numbers[i + 1])) {
-                        str += '-' + numbers[i + 1] + '-'
-                    }
-                return str;
-        }
+        //         for (let i = 0; i > numbers.length; i++)
+        //             if (numbers[i] === '-' && !isNaN(numbers[i + 1])) {
+        //                 str += '-' + numbers[i + 1]
+        //             }
+        //         return str;
+        // }
     }
 
     Add(string) {
@@ -23,12 +23,20 @@ class stringCalculator{
             return 0;
         }
         
-        //Throw an error if there's a negative
-        let negative = this.negatives(numbers);
-        
-        if (negative) {
-            throw new Error('Negatives '+ negative +' not allowed');
+        let str = "";
+
+        for (let i = 0; i < string.length; i++){
+            if (string[i] === "-" && !isNaN(string[i + 1])) {
+                str += "-" + string[i + 1] + " "
+            }
         }
+
+        //Throw an error if there's a negative
+
+        if (str != "") {
+            throw new Error("Negatives not allowed " + str);
+        }
+
         //Convert string to numbers
         for (let i = 0; i < numbers.length; i++) {
             let digit = parseInt(numbers[i])
@@ -45,6 +53,6 @@ class stringCalculator{
         
 }
 
-let calc = new stringCalculator();
-console.log(calc.Add('-2, 1001'))
+// let calc = new stringCalculator();
+// console.log(calc.Add("/-1\n-2%"))
  module.exports = {stringCalculator}
